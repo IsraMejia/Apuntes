@@ -1,0 +1,17 @@
+------------CusroGit Youtube.................
+git init = crear como repositorio a la carpeta -WD (working directory)
+git status = ver los archivos //rojo aun no guardados
+git add = agregar al repositorio
+
+git commit = crear 1er punto de control
+si no se pone el archivo, se agregan todos al commit
+
+git log = ver todos los commits realizados
+
+git push -u origin master //subir
+
+git status
+git add -A
+git commit -m "xD"
+git log
+git push -u

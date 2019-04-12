@@ -1,0 +1,22 @@
+------------CusroGit Youtube.................
+git init = crear como repositorio a la carpeta -WD (working directory)
+git status = ver los archivos //rojo aun no guardados
+git add = agregar al repositorio
+
+git commit = crear 1er punto de control-snap shoot
+si no se pone el archivo, se agregan todos al commit
+
+git log = ver todos los commits realizados
+git checkout -- archivo.arch //revertir los cambios realizados
+
+git diff archivo.arch //te pone en verde todos llo agregado y en rojo lo quitado
+
+.gitignore <- NOMBRE del archivo que necesitamos para que ignoren a otros el git de nuestra carpeta. Para ello dentro de este le decimos el nombre del archivo y al hacer git status ya no salen
+ git add .gitignore //se puede agrerar el ignore al git
+
+git branch nomVersion //se crea una version alternativa
+git checkout nomVersion //navegar dentro de una version
+
+git add . //agregar a todos los archivos del enterno de trabajo
+
+git clone http..linkclone... //para poner en ese directorio los archivos que le corresponden, se mantiene su log

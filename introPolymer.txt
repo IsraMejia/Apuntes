@@ -1,0 +1,162 @@
+// introduccion a polimer
+//se recomienda usar visual studio code
+lit element :
+renderiza html, css de manera muy limpia y permite trabajar todo mas rapido a nivel de sintaxis
+te ayuda a brindar programacion reactiva.
+//programacion reactiva: programacion orientada a objetos
+Lit element NO es polymer, el banding? es con javascript
+
+catsys  component : creat my-component
+//cache con yart y te crea un proyecto en JS
+//las propiedades se inicializan en el constructor con lit element, NO tocar la parte de styles xD
+idgma  script 6 <- se ocupa
+
+scss <- sas
+karma = se autogenera y No se toca xd
+catsys add : server <- creo que asi se corre la app
+
+catsys app: create nombreDeLaAplicacion
+yarn <- instalar la app
+en src (sorce), se crea la estructura, se puede trabajar con redox para facilitar la comunicacion en brig
+
+Brind properties to child elements
+//Se ocupa la interpolacion para TODO ${objeto.AtributoOmetodo}
+-los atributos solo sirven con comillas en lit element
+-boolean usar signo de interrogacion  y lo demas xd
+-propety: se tiene que Usar el punto ?checked="${...}"
+//atributo es HTML , propiedad JS , .value="${...}"
+-eventos usar arroba @event="${...}"
+
+checar documentacion de lite elements
+
+
+Ciclos y estructuras de control
+Todo con vanilla, viene en la documentacion en lit element, cambia mucho D:
+Es la Unica manera de hacer esto xdd
+
+array = [];
+
+//asi es como se hacen los ciclos :o
+array.map(funcion(elementoIterante)){
+  console.log("Elemento");
+}; //en la documentacion viene como ArrowFunctions
+
+  Condicionales:
+Se ocupa un booleano o comparacion, despues similar a una estructura terniaria
+condicion?
+true:
+false;
+
+${ //operador terniario if else
+  this.page ==="default" ?
+  html todo lo que tiene que hacer : //html `<home-page class="page...................."`
+  caso contrario''
+  }
+
+catsys CLI <- tecnologia que esta en github para hacer lit element
+
+
+npm
+webcomponets.org // se pueden descargar listos para usar y apoyarnos en el hackathon
+
+
+//PWA :Progressive web Apps--------------------------------------------
+Aplcaciones web en moviles (se pude usar un appi)
+navegador nativo en web
+se suelen combinar con aplicaciones nativas y ayuda al maximo el performance en
+ciertos aspectos, evitando hacer multiples peticiones, en un Solo hilo.
+Se evita el efecto de descarga, de manera que no se de cuenta el usuario que usa
+una aplicacion web.
+La pagina web hace el renderizado y de lo que se ve en pantalla el telefono
+
+fallback.html //entra cuando el usuario no tiene acceso a internet
+
+-El diseño debe ser completamente asincorno , incompatible con XHR aSINCRONO Y localStorage
+-Uso intensivo de promesas
+-Solo en https por seguradad
+
+-El serviceWorker nos puede servir para mandar avisos al usuario de manera amigable
+fetch : esperar los mensajes del SW
+push : pasa el mensaje
+terminated :  si hubo un error pasa aqui, la intencion es que sea autosuficiente y que usuario no lo vea
+
+El server Worker se hace en javascript
+
+Esto ayuda que si se te va la conexion lo refrescas y te abre todo desde la cache
+
+
+//-----------------------------------------------------------------------
+              Patrones y Arquitectura de Web Component
+
+Un componente nos ayuda a reutilizar y extender de manera sencilla codigo
+arquitectura de los web components
+-HTML -> temples
+-Costum elements
+-Shadow DOM
+
+-HTML -> temples
+Crear pantlillas para la interfaz del usuario, se accede al codigo mediante un templante de JS
+facilitando el desarrollo web
+
+-Costum elements
+es el HTML
+
+-Shadow DOM:
+Se encarga de encapsular nuestro componente con el fin de que se pueda personalisar
+y protegerlo. Es en CSS
+
+
+----Buenas practicas:
+
+-separar el contexto (funcionalidades) de cada componente, conservar la independencia
+
+-Atomicidad: componentes a su minima expresion para poder arreglar errores de manera mas independiente
+cada componente tiene que ser concreto en su funcionalidad y atomico
+
+-Mediacion:para la comunicacion interna entre los componentes es importante tener claro que hace cada uno.
+
+-Reutilizacion:Atomicos,independientes y compatibles con distintos proyectos (bloques lego).
+
+//----------------------------------------------------------------------------
+                      Web Components Vanilla
+HTML element:
+ayuda a los custom elements, se usa en los callbacks del ciclo de vida interactuando con el prototipo
+
+SELECT : te permite agregar una etiqueta html
+
+Template:No renderiza inserta ciertas cosas al espacio de memoria
+se puede clonar e insertar un documento de una manera sencilla mediante un Template
+
+-Shadow DOM:
+Encapsula el arbol DOM evitando que colisione con otros
+
+
+-HTML import :
+Atomisa todo como bloques de lego y ayuda a tener un mayor control del mantenimiento de los componentes
+ayuda la escabilidad al encontrar los errores mas facilmente.
+Es importante que sea reutilizable
+se usa el atributo rel
+
+repositorio:
+https://repl.it/@BrunoPineda/WebComponentsVanilla
+
+vanilla es una forma de ver como polymer trabaja desde atras, no siempre es mejor usarla
+que aumenta la carga de trabajo.
+
+
+
+
+//----------------------------------------
+
+                      Idea hackathon
+
+  Calculadora de divisas:
+
+    -No importa el tiepo de moneda
+
+    -Tiempo real
+
+    -Muestra los valores en las divisas utilizadas
+
+    -usa machine learning para mostrar estadisticas de donde se realizan los principales
+  cambios de moneda

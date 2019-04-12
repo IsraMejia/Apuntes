@@ -1,0 +1,130 @@
+-------Apuntes de JavaScritp
+
+var signo = prompt("Cual es tu signo?")  
+//aviso en el navigador con scan, cancelar = null
+
+lenguaje debilmente tipado, puede cambiar una variable de
+int a string etc...
+
+const MAYORIA_EDAD =18 <- Constantes
+
+nombre.length //atributo que nos dice el largo de la cadena
+
+var string  = nombre.substr(0,2) //intervalo de posiciones del la cadena
+
+function imprimirEdad(n,e){
+  console.log(n+" tiene " + e+ " años");
+}
+imprimirEdad(nombre,edad) //mandar a llamar la Funciones
+/*no es necesario definir los tipos de datos al declarar la clase
+se le pueden pasar los datos desde el navegador recordando poner los String
+entre parentesis
+incluso no se le pueden pasar parametros y aun asi JS tratara ejecutar la funcion
+Esto debido a que es un lenguaje interpretado, "se compila en  tiempo real"
+*/
+
+function imprimirMayus() {
+  nombre = nombre.toUpperCase()
+  console.log(nombre)
+}
+
+imprimirMayus()
+
+/*para hacer funcionar la funcion  desde el navegador
+se escribe window.nombre 
+*/
+
+var nombre = "Ana"
+
+function imprimirMayus(n) {
+  n = nombre.toUpperCase()
+  console.log(n)
+}
+
+imprimirMayus(nombre)
+
+/*
+Se recomienda usar parametros en la funcion para que esta solo tenga un alcance
+local y no modifique nuestros datos
+*/
+
+var nombre = "Ana"
+
+function imprimirMayus(nombre) {
+  nombre = nombre.toUpperCase()
+  console.log(nombre)
+}
+
+imprimirMayus(nombre)
+ /*De igual manera se pueden crear variables con mismos nombres de la variable
+globales teniendo solo alcance local dentro de nuestra funcion*/
+
+//Objetos
+
+var isra ={
+  nombre : "Isra",
+  apellido : "Mejia",
+  edad : 28
+}
+
+
+imprimirMayusObj({nombre : "pepito"}) //Se crea el objeto al hacer la funicion 
+//es necesario que la funcion pida el atributo nombre
+
+imprimirMayusObj({apellido : "perez"}) //manda error al no tener apellido definido en la funcion
+
+//Destrocturacion de Objetos
+function imprimirEnMayusDes(persona){
+  var { nombre } = persona
+  //Se le asigna a una variable nombre el atributo nombre del Objeto
+  console.log(nombre.toUpperCase());
+}
+
+imprimirEnMayusDes(ana)
+
+----------------------------------------------------------
+
+Existen distintas maneras para operar objetos mediante funciones:
+	-Referencia
+	-Valor
+	-Creando una copia temporal del Objeto
+
+____________________________________________________________
+var x=4, y="4"
+x==y //comparacion en un mismo tipo de dato String
+x===y //Son del mismo tipo de dato y valen lo mismo?
+
+objeto1 = objeto2 
+/*Se le asigna la misma direccion de memoria al objeto1 del 2 
+por lo que son el mismo objeto ahora, despues de esto todos los cambios realizados
+encualquierade los dos afecta a ambos*/
+
+
+-ARROWFUNCTIONS---------------
+//OJO Y OREJA------------------------------------------
+// Arrowfunctions-----------------------------
+//const esMayorEdad  = function (persona){ //se vale
+/*const esMayorEdad = persona => { //forma recomendada
+  return persona.edad >= MAYORIA_EDAD
+}*/
+//forma ULTRAHACKERPROOOO:O
+//const esMayorEdad = persona => persona.edad >= MAYORIA_EDAD
+const esMayorEdad = ({edad}) => edad >= MAYORIA_EDAD
+
+/*
+Se le asigna a una variable una funcion anonima = sin nombre
+a pesar que la variable si tiene nombre
+se reconienda hacerla constante para que sea mas facil
+
+la funcion se hizo una constante que se le asigna el boolean del resultado
+de comparar la edad del objeto persona
+En la UlimateHacker, se desestructura el objeto ya que solo nos interesa
+su atributo edad 
+*/
+
+---------Arreglos
+//arreglo de objetos
+var personas = [ana, isra, alo, rex, coco] 
+personas[0].altura //se accede a la altura de ana 7u7
+
+personas.length//largo de la cadena
