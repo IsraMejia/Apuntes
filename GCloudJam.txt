@@ -1,0 +1,8 @@
+Google Cloud 
+
+Google tiene data centers cableados transoceanicos.
+	-Compute Enginne:
+Sistema de debugs, se automatizan y repara problemas sencillos de servidores 
+	-Storage y DB:
+	-Machine Learning : 
+Servicios con algoritmos y modificarlos, reconocimiento de imagenes, analisis de video, texto

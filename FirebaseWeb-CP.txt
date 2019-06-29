@@ -1,0 +1,52 @@
+--------------Apuntes de curso de Firebas para la WEB (Platzi)----------------------------
+-Servicio Backend
+-apps robustas sin infrestructura (se usa la de google), es integrado 
+
+~Cloud Firestore : Base de datos NoSQL en tiempo real.
+~Autentificacion : simple y seguro.
+~Cloud Storage : almacenar y escalar archivos
+~CloudMessaging : servicio de mensajeria a los usuarios.
+~Hosting : "servidor".
+~Cloud Funcions : administracion de los servidores.
+
+	costos:
+Spark (gratis) : 
+autentificacion, estadisticas, 100 conexiones simultaneas, 1gb de almacenamiento
+10gb/mes BD, etc...
+
+En la seccion de la pagina web "consola" , creamos nuestro proyecto, se puede cambiar el
+data center al que sea, una vez que se selecciona una ubicacion ya jamas se podra cambiar.
+clave de servidor: Se usa para el backend
+
+En cuentas de Servicio nos dan las llaves para poderlo implementar directamente en el 
+backen de nuestra aplicacion, se brinda el SDK para NodeJS, Java, Python y Go.
+
+Usuarios y Servicios: Aqui se le puede definir a cada quien que servicios y poder 
+tienen sobre el proyecto
+
+//Implementacion a la app web:
+se copia el codido JS de la seccion de añade a tu aplicacion web
+-En la parte de abajo viene la documentacion 
++Se crea el objeto config con los valores que google te da para que se pueda anexar
++Se agrega en el index.html como un script
+	
+	<!--build:js js/main.min.js -->
+	<script type="text/javascript" src="js/config/ConfigFirebase.js"></script>
+	...
+	<!-- endbuild -->
+
+	</html>
+
++Se recomienta que el primer script que corra sea el de firebase
++Se agrega la siguiente linea de codigo para que se inicialice el objeto via firebase:
+	firebase.initializeApp(config);
+Esto se hace dentro de general.js
+
++Con esto se agrego el script para que firebase este dentro de nuestro proyecto.
+
+//-------------Autentificacion de Usuarios:
+Se puede hacer con correo y contraseña o con redes sociales, google da diferentes SDK 
+para distintos lenguajes de progracmacion para que esto sea posible.
+Firebas Auth UI <- consola personalizable de google.
+En la documentacion de google vienen distintos scripts que podemos utilizar para 
+agregar cada servicio de auth en nuestro proyecto.

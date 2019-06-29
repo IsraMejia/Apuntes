@@ -1,0 +1,72 @@
+//----------------Curso de Android platzi
+Activity : ArchivodeJava.java //camello
+Layout : archivo_xmlxD.xml	//snake_sin_mayusculas
+
+carpetas:
+
+app :
+	---manifest:
+	Contiene toda la configuracion de la aplicacion con respecto al sistema operativo
+	
+	---java: 
+	Contiene los controladores del proyecto en java, con los package
+
+	---res: 
+	Todos los recursos de la aplicacion:
+		Drawable:contien las Imagenes
+		Layout: almacena todas las interfaces xml
+		Menu:menus xml
+		Mipmap: todos los Iconos
+		Values: Recursos como colores, medidas relacionadas a la aplicacion (dimens), todos los textos de la aplicacion y el tema de la aplicacion todo en xml
+
+
+Gradle Scripts:
+	Se ingresan todas las librerias externas y ajustes como los SDKS donde se trabajara (build.gradle).
+
+
+//emulador 
+Tools->avd managger-> configurar y ya tenemos un emulador de la app
+
+//POJO
+Objeto Plano y a la Antigua : 
+	Se evita perder la simplicidad del proyecto, evitando la dependencia a frameworks
+haciendo buenas practicas de programacion de POO como por ejemplo el uso de geterrs an setters
+estos ultimos los puede hacer en automatico android studio con control+N xD
+
+//Arquitectura MVC Android:
+Las aplicaciones interactuan con pantallas creadas en Java (main activiti) con una interfaz (layout =vistas)definida en XML
+El controlador controla lo que la vista necesite
+	
+	-Modelo:	Como se manejan los datos (pede ser java)
+Forma en la que se modela la Base de datos, El controlador java llama al modelo para interactuar con los datos
+
+	-Controlador:  Clase de Java
+controla lo que tiene que hacer la vista
+
+	-Vista:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
