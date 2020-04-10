@@ -1,0 +1,79 @@
+CusoPython------------------------------------------
+	Tipos de datos
+interger <int>
+Float <float>
+String <str>
+Boolean <bool> = True || False 
+
+
+se puede hacer esto xd
+>>> 'hola'+ ' hackerjaja' *3
+'hola hackerjaja hackerjaja hackerjaja'
+
+pero no se puede dividir al ser una cadena
+>>> 'hola'+ ' hackerjaja' /3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+Se sale de la consola interactia con 'exit()' jaja xD
+
+Ejemplo
+# -*- coding: utf-8 -*-
+# La linea anterior define el idioma a usar para que lo reconosca python
+name = str(raw_input('¿Cual es tu nombre?')) #raw_input() es el scan de python jaja
+print('Hola, ' + name + ' ;D')
+
+-------Funciones
+def suma(num1, num2):
+	return num1+num2
+
+suma(2,3)#El resultado es 5
+
+-------main
+
+if __name__ == '__main__': #Si el nombre de este archivo python lo reconoce como el main este lo sera
+	main()
+
+----------------------------Flujo de ejecucion
+Es interpretado se lee de arrriba hacia abajo y de izquierda a derecha
+Cuando se agrega la funcion :
+
+if __name__ == '__main__':
+	run()
+
+Indica con que funcion tiene que iniciar en este caso 'run()' el cual orquestara al programa
+mandando a llamar otras funciones de manera ordenada
+
+'Scoop' de una funcion : 
+	Python tiene un contenedor de variables las cuales definen su eistencia de la misma
+	y de sus varibles. En realidad las variables y las funciones solo funcionaran 
+	dentro de su misma Scoop la cual es su tiempo de ejecucion.
+
+
+---------------------Condicionales--------------
+Operadores relacionales:
+	== ; != ; > ; >= ; < ; <= 
+
+		Casos interesantes:
+		>>> 'z' > 'a'
+		True #les asigna un valor numerico respecto a su posicion en el abecedario
+
+
+
+Operadores lOGICOS:
+	and ; or ; not (invierte el signo);  is ; in ;
+
+		Casos interesantes:
+		>>> 'a' == 'a' or 'b' != 'b'
+		True #Es verdadero minimo uno
+
+-------------------------------------------------------------------------------------
+
+
+//Me quede en el 12 = 'Buenas practicas del lenguaje'
+
+racoonshackerclub@gmail.com
+
+
+

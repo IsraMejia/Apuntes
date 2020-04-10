@@ -1,0 +1,45 @@
+_______________________________________-SQL Azure -__________________________
+
+
+-----------------Usando VSC
+//Creando conexion en VSC con SQLAzure:
+	Se abre Tools->CommandPalete
+	Se seleccion SQL:Conection
+	Se ingresa:
+Server=tcp:platzi-sql.database.windows.net,1433;Initial Catalog=registrosprueba;Persist Security Info=False;User ID=IsraelMja;Password=225@Azure;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30
+
+Si se logra se tiene tiene que salir un mensaje asi :
+mssql: Profile created and connected
+
+Ahora en el archivo SQL se escriben las sentencias y con "comand+shift+e" se ejecutan, lo que 
+trae la consulta directamente del servidor en la nube
+Puedes seleccionar las tablas y guardarlas en distintos archivos como JSON, xml, etc.
+
+INSERT INTO SalesLT.ProductCategory (Name, rowguid, ModifiedDate)
+VALUES ('Boxers', 'cfbda26c-df75-47a9-b81b-64ee161aa37e', 2019-12-22)
+
+SELECT * FROM SalesLT.ProductCategory
+--Inserto un renglon, en el caso de rowguid no pueden ser iguales los valores
+
+DELETE FROM SalesLT.ProductCategory
+WHERE Name = 'Boxers'
+
+SELECT * From SalesLT.ProductCategory
+--Se borraron los chones
+
+
+--Busca coincidencias 
+SELECT * FROM SalesLT.ProductCategory
+WHERE Name LIKE '%coffe';
+
+--Actuaizar valores de una columna de la base de datos
+UPDATE SalesLT.ProductCategory
+SET Name = 'LesheShavoLALA'
+WHERE ProductCategoryID = 45
+SELECT * FROM SalesLT.ProductCategory
+
+--Eliminando el registro con id 45
+DELETE FROM SalesLT.ProductCategory
+WHERE ProductCategoryID = 45
+
+

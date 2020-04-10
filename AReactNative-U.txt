@@ -1,0 +1,25 @@
+----------Curso de ReactNative
+expo init 5-tenedores
+se seleciona blanck 
+no se instalan las dependencias de yarn 
+
+--------Correr la aplicacion
+Se tiene que estar en la carpeta de la aplicacion en la terminal y poner:
+yarn start
+Se abrera una ventana de expo (local host) o dara el link en la terminal
+abrir expo en la simulacion o dispositivo y ejecutar la app o escanear el qr y ejecutar 
+
+--------ReactNative- Elements
+https://react-native-training.github.io/react-native-elements/
+en esta pagina podemos ver la documentacion para crear nuestros componentes para la aplicacion,
+un componente es como un widget en flutter.
+Se instala en la carpeta del proyecto poniendo en terminal:
+	yarn add react-native-elements
+Ahora en VSC tenemos mas arhivos para que esto funcion en :
+	node_modules/react-native-elements
+y en package.json  en "dependencies" tenemos agregado "react-native-elements": "^1.2.3",
+
+
+
+
+

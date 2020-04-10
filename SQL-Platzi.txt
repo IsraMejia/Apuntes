@@ -1,0 +1,116 @@
+________________-SQL \ Platzi - __________________________
+
+___________________-Terminal-__________________________
+/usr/local/mysql/bin/mysql -u root -p  
+COMMENT 'Primer comando al inicial mysql
+-u = Usuario root
+-h = host = localhost 
+-p = password '
+
+SHOW databases; 
+COMMENT 'Muestra las bases de datos de la compu'
+
+USE ____;
+COMMENT 'Se selecciona la base de datos que se va a usar _____'
+
+SHOW tables;
+COMMENT 'Muestra las tablas de la base de datos'
+
+SELECT ____;
+COMMENT 'Se selecciona la tabla de la base de datos a usar'
+COMMENT 'podemos seleccionar un renglon de la tabla'
+SELECT * FROM clients where client_id = 4;
+SELECT * FROM clients where client_id = 4\G 
+COMMENT 'Te lo muestra como una lista mas organizada'
+
+
+DESC _____;
+COMMENT 'Describe todos los datos de la tabla'
+
+INSERT INTO tabla (columna, ... , columnas) VALUES ('valor', ... , 'valores')
+INSERT INTO authors( name, narionality) VAlUES ('Juan Rulfo', 'MEX');
+COMMENT 'Para insertar valores a las tablas los parametros son dinamicos
+	En el caso valores AUTO_INCREMENT los VALUES('')  =  se dejan vacios'
+
+INSERT INTO authors(name, narionality)
+VALUES('Julio Cortazar','ARG'),
+	('Isabel Allende' , 'CHI'),
+	('Octavio Paz' , 'MEX'),
+	('Juan Carlos Onetti ' , 'URU');
+COMMENT 'Se recomienda de 50 en 50, se piensa que es el mayor numero donde no pierde velocidad'
+
+INSERT INTO `clients` (client_id , name , email , birthdate, gender, active) VALUES
+(1 , 'Israel Mejía', 'isra@gmail.com' , '1997-10-22', 'M',1),
+(2 , 'Alo M ', 'alom@gmail.com', '1996-02-01', 'F',1),
+(3, 'Isaac Sirnonithosaurus', 'simi@gmail.com', '2000-01-02', 'M',1),
+(4, 'Steve pixel', 'mine@craft.com', '1980-12-28', 'M',1);
+
+
+INSERT INTO `clients` (client_id, name, email , birthdate, gender, active)
+VALUES(5, 'Steve pixel', 'mine@craft.com', '1980-12-28', 'M',1);
+
+SELECT * FROM clients WHERE client_id = 4; COMMENT 'Te da los valores de client_id = 4'
+SELECT * FROM clients WHERE client_id = 4\G COMMENT 'Te da los valores de client_id = 4 en lita'
+
+INSERT INTO `clients` (client_id,name, email , birthdate, gender, active)
+VALUES(5,'Steve pixel', 'mine@craft.com', '1980-12-28', 'M',0)
+ON DUPLICATE KEY UPDATE active = VALUES(active);
+	COMMENT 'Se actualiza el valor de active a 0 el, utiliza el valor de la sentecia 2 
+		ON DUPLICATE KEY -Pertenece a VALUES y - Te ahorra mucho tiempo en el trabajo'
+
+INSERT INTO books (title, author_id) VALUES ('El laberinto de la soledad' , 6);
+	COMMENT'Se le abrego un libro aninando Los datos de Octavio paz de la tabla authors'
+
+INSERT INTO books (title, author_id, year)
+VALUES('Vuelta al laberinto de la soledad',
+	(SELECT author_id FROM authors 
+	WHERE name = 'Octavio Paz'
+	LIMIT 1),
+	6);
+
+COMMENT 'Se acaba de hacer un query Anidado, la computadora lo hace en automatico lo del insertar el ID 
+del autor pero el procesamiento/tiempo se eleva al cuadrado, por lo que requiere de mas recursos'
+
+_____________________________-Generar Tablas-________________________
+
+--Los comentarios al generar tablas es con doble guion
+
+ENUM('M' , 'F', 'ND')
+//En los argumentos se le da las opciones que puede recibir la BD
+
+
+TIMESTAMP 'YYY-MM-DD hh:mm:ss' //Registra el tiempo en segundos
+DATETIME  'YYY-MM-DD'//Dias
+
+
+CREATE database platzi_operation;  //Crea la base de datos "platzi operation"
+
+active TINYINT(1) NOT NULL DEFAULT 1,
+/*Ninguna dupla de la BD se debe borrar, solo se pone activa o inactiva
+  Al borrar un usuario en realidad solo se inactiva la tupla*/
+
+updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+/*Registra la ultima actualización en Segundos, no admite nulos*/
+
+
+email VARCHAR (100) NOT NULL UNIQUE, 
+COMMENT ' Solo puede haber un email, no se puede repetir en la tabla'
+
+
+
+__________________________________-Buenas practicas-________________
+
+
+Se recomienda Referir datos de otras tablas ya que esto nos ahorra tiempo en consultas y esta mas
+organizado en el caso de la libreria los datos del autor seran referenciados de otra table 
+mediante su ID.
+De esta manera no se duplican datos por consiguiente ahorramos espacio
+
+
+
+
+
+
+
+
+

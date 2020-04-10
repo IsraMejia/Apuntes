@@ -1,0 +1,13 @@
+_________-Azure - Udemy - ___________
+ Cadenas de conexion de nuestro data base nos permite integrar el script de la base de datos en nuestras aplicaciones en formatos:
+ -ADO.NET
+ -JDBC
+ -ODBC
+ -PHP
+ -GO
+ Se puede hacer en otros lenguaes, pero seria que tu lo programes colocando:
+ Servidor, credenciales de autentificacion, nombre de bases de datos.
+
+ en Locks: se puede bloquear acciones como borrar ciertas tablas
+
+ Enmascaramiento de datos es como encriptar la info de la base de datos

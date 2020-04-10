@@ -1,0 +1,224 @@
+	Notas Curso Flutter 
+
+--------------------------Sintaxis Dart
+//TODO es un objeto y eredan de la clase object 
+
+var nombre = 'Isra' //No es fuertemente tipado
+
+
+//-----------------------aplication
+lib // aqui se guardan todos los archivos .dart
+pubspec.yaml // Archivo de configuracion skd, assets, imagenes etc, es importante
+// declarar aqui igual las carpetas, se puede declarar aqui la fonts dentro de assets
+
+Mas de flutter :
+/*
+flutter usa programacion declarativa:
+Se cambian los valores de los "atributos", cambiando su propiedad declarandola:
+	retur ViewB(
+		color: red,
+		child: ViewC(...)
+	)
+Se dice que al ser declarativa se suele apegar mas al lenguaje humano, haciendola mas
+facil de leer a comparacion de la imperativa.
+
+
+prog Imperativa:
+usada en POO , estructurada etc,:
+	b.setcolor(red)
+	b.clearChildren()
+	View c3 = new View(...)
+	b.add(c3) // se usan metodos al cambiar los varoles de sus atributos
+
+
+Cabe destacar que Flutter usa declaracion reactiva para el uso de widgets y programacion
+orientada a objetos para llamar a los widgets.
+*/
+
+import'package:flutter/material.dart';
+/*
+la paqueteria de todos los widgets con los que trabaja flutter 
+*/
+
+widgets basicos:
+Text /*
+Widget con el que se puede mostrar textos
+
+Text(
+  'Hello, $_name! How are you?', // $_name! pasa el valor de los caracteres $_! concatena xD
+  textAlign: TextAlign.center, //alinea en el centro
+  overflow: TextOverflow.ellipsis, //Si es muy largo y estorba en otros widgeds lo contiene y no choca
+  style: TextStyle(fontWeight: FontWeight.bold), //lo pone en negritas
+)
+
+https://api.flutter.dev/flutter/widgets/Text-class.html 
+en la documentacion se pueden ver mas ejemplos y caracteristicas
+*/
+Row/* renglon
+Acomoda los elementos en forma de filas de izquierda a derecha:
+Row(
+  children: <Widget>[
+    Expanded(
+      child: Text('Deliver features faster', textAlign: TextAlign.center),
+    ),//fila1
+    Expanded(
+      child: Text('Craft beautiful UIs', textAlign: TextAlign.center),
+    ),//fila 2
+    Expanded(
+      child: FittedBox(
+        fit: BoxFit.contain, // otherwise the logo will be tiny
+        child: const FlutterLogo(),
+      ), // Contiene el logo de flutter, se puso en la fila 3
+    ),
+  ],
+)
+
+*/
+Columna/*
+el widget acomoda sus elementos en columnas de arriba hacia abajo
+
+Column(
+  children: <Widget>[
+    Text('Deliver features faster'), //Columna 1
+    Text('Craft beautiful UIs'), // Columna 2
+    Expanded(
+      child: FittedBox(//Columna 3 imagen de flutter
+        fit: BoxFit.contain, // otherwise the logo will be tiny, de otra forma seria mas pequeño
+        child: const FlutterLogo(),
+      ),
+    ),
+  ],
+)
+
+*/
+Stack/* Pila
+Sobre pone los elementos del widget uno sobre el otro, entre capas, donde la primera 
+capa queda hasta abajo y la que le sigue se pone encima de la anterior.
+
+Stack(
+  children: <Widget>[
+    Container(//primera capa (hasta abajo)
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(// segunda capa
+      width: 90,
+      height: 90,
+      color: Colors.green,
+    ),
+    Container(// tercer capa, la de hasta arriba
+      width: 80,
+      height: 80,
+      color: Colors.blue,
+    ),
+  ],
+)
+
+----------------------
+Aqui hay otro ejemplo de un degradado
+SizedBox(
+  width: 250,
+  height: 250,
+  child: Stack(
+    children: <Widget>[
+      Container(
+        width: 250,
+        height: 250,
+        color: Colors.white,
+      ),
+      Container(
+        padding: EdgeInsets.all(5.0),
+        alignment: Alignment.bottomCenter,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: <Color>[
+              Colors.black.withAlpha(0),
+              Colors.black12,
+              Colors.black45
+            ],
+          ),
+        ),
+        child: Text(
+          "Foreground Text",
+          style: TextStyle(color: Colors.white, fontSize: 20.0),
+        ),
+      ),
+    ],
+  ),
+)
+
+
+*/
+Container/*
+'Caja' o contenedor de elentos para posicionarlos como se quiera, puede ser texto, imagenes
+colores etc.
+
+Center(
+  child: Container(
+    margin: const EdgeInsets.all(10.0),
+    color: Colors.amber[600],
+    width: 48.0,
+    height: 48.0,
+  ),
+)
+
+------------------
+Container(
+  constraints: BoxConstraints.expand(
+    height: Theme.of(context).textTheme.display1.fontSize * 1.1 + 200.0,
+  ),
+  padding: const EdgeInsets.all(8.0),
+  color: Colors.blue[600],
+  alignment: Alignment.center,
+  child: Text('Hello World',
+    style: Theme.of(context)
+        .textTheme
+        .display1
+        .copyWith(color: Colors.white)),
+  transform: Matrix4.rotationZ(0.1),
+)// un hola mundo chueco interezante, tiene fondo blanco y uno azul
+*/
+
+
+/*
+---------------------------------------------------------------------------------------------------------
+*/
+
+--------------------------Todo es un Widget
+/*
+Al ver un arbol de clases, la clase padre de TODAS es la clase Widget, de ellas heredan
+distintas clases, entre ellas las mas importantes:
+	-	StateFulWidget
+	-	StateLessWidget
+*/
+
+
+SateFulWidget// widgets con estado
+/*De esta clase se derivan 
+los widgets con los que el usuario interactua, estos pueden ser:
+Checkbox, Radio, Slide, Form
+Scrolable, Animable
+*/
+StateLessWidget
+/*De esta clase se derivan los widgets que no interactuan con el usuario:
+Icono, teto, contenedor con color
+AssetImage , Text
+*/
+
+
+--------Layout
+/*
+Sirven para Analizar y acomodar los widgets ya sean de estado o no en la aplicacion.
+Se suelen detectar las columnas que usa la app, los textos, los iconos y en general todas las
+anidaciones que hay entre los widgets.
+
+*/
+
+-----Actividad
+imagen con contenedor qeu transparenta y un texto, ambos centrados
+
+
+
